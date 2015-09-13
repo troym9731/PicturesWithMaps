@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="fmApp">
 <head>
   <meta charset="UTF-8">
   <title>FlickrMaps</title>
@@ -7,7 +7,18 @@
 </head>
 <body>
 
-  <div class="app"></div>
+  <header class="primary-header">
+    <div class="icons">
+      <i class="fa fa-flickr"></i>
+      <i class="fa fa-maps"></i>
+    </div>
+  </header>
+
+  <main ng-view></main>
+
+  <footer class="primary-footer">
+    <h1>This is a footer</h1>
+  </footer>
   
   <script src="build/bundle.js"></script>
 </body>
