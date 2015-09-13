@@ -1,0 +1,24 @@
+/** Buttons **/
+
+button {
+  background-color: transparent;
+  border: 1px solid #FFF;
+  border-radius: 4px;
+
+  &:hover {
+    background-color: #FFF;
+    color: #444;
+    transition: all 0.3s;
+  }
+}
+
+a.btn {
+  @extend button;
+}
+
+.banner-login.btn {
+  font-size: 16pt;
+  display: inline-block;
+  padding: 10px 25px;
+  margin: 15px;
+}

@@ -1,10 +1,76 @@
-/****************************************
-  Header
-*****************************************/
+/** Header **/
 
 .primary-header {
   color: #FFF;
   background-color: #000;
   position: relative;
   min-height: 85px;
+}
+
+.site-title {
+  position: absolute;
+  top: 20px;
+  left: 200px;
+}
+
+.header-icons {
+  position: absolute;
+  min-height: 50px;
+  top: 25px;
+  right: 200px;
+
+  .fa {
+    color: #FFF;
+    font-size: 22pt;
+    margin: 0 5px;
+  }
+}
+
+/** Background **/
+
+.background {
+  position: relative;
+  background-image: radial-gradient(rgba(35, 35, 35, 0.24), rgba(35, 35, 35, 0.24)), url('http://www.restreets.org/sites/default/files/GoogleMap.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center; 
+  min-height: 510px;
+}
+
+/** Banner **/
+
+.banner {
+  text-align: center;
+  color: #FFF;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/** Footer **/
+
+.primary-footer {
+  color: #FFF;
+  background-color: #000;
+  position: relative;
+  min-height: 85px;
+
+  h4 {
+    position: absolute;
+    top: 15px;
+    left: 200px;
+  }
+}
+
+.social-media-nav {
+  position: absolute;
+  top: 25px;
+  right: 200px;
+
+  .fa {
+    color: #FFF;
+    font-size: 22pt;
+    margin: 0 5px;
+  }
 }
