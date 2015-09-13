@@ -1,5 +1,5 @@
 var gulp = require('gulp');
-var babel = require('gulp-babel');
+var babel = require('babelify');
 var gutil = require('gulp-util');
 var source = require('vinyl-source-stream');
 var browserify = require('browserify');
@@ -14,7 +14,7 @@ var sass = require('gulp-sass');
 var bundler = browserify({
   entries: ['./src/app.js'],
   debug: true
-});
+}).transform(babel);
 
 bundler.on('log', gutil.log); // output build logs to terminal
 
@@ -26,7 +26,6 @@ gulp.task('build', ['clean'], function () {
   return bundler.bundle()
     .on('error', gutil.log.bind(gutil, 'Browserify Error'))
     .pipe(source('bundle.js'))
-    .pipe(babel())
     .pipe(gulp.dest('build'));
 });
 
