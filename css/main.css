@@ -2201,7 +2201,7 @@ a.btn {
   margin: 15px; }
 
 /** Map **/
-#map {
+.angular-google-map-container {
   min-height: 510px; }
 
 /****************************************

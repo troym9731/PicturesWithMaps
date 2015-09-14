@@ -1,6 +1,8 @@
 import angular from 'angular';
 import fmServices from './services';
 import fmApp from './app';
+import angular_google_maps from '../bower_components/angular-google-maps/dist/angular-google-maps.min.js';
+import angular_simple_logger from '../bower_components/angular-simple-logger/dist/index.js';
 
 let fmControllers = angular.module('fmControllers', []);
 
@@ -22,15 +24,11 @@ fmControllers.controller('LoginCtrl', ['$scope', '$location',
   }
 ])
 
-fmControllers.controller('MapCtrl', ['$scope',
-  function($scope) {
-    function initMap() {
-      var map = new google.maps.Map(document.getElementById('map'), {
-        center: {lat: -34.397, lng: 150.644},
-        scrollwheel: false,
-        zoom: 8
-      });
-    }
+fmControllers.controller('MapCtrl', ['$scope', 'uiGmapGoogleMapApi',
+  function($scope, uiGmapGoogleMapApi) {
+    uiGmapGoogleMapApi.then(function(maps) {
+      $scope.map = { center: { latitude: 45, longitude: -73 }, zoom: 8 };
+    });
   }
 ])
 
