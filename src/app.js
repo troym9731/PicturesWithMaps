@@ -3,8 +3,10 @@ import angular_route from 'angular-route';
 import fmServices from './services';
 import fmControllers from './controllers';
 
+OAuth.initialize('4lBI76EZhVMz17EBWkTmYb0mg_4');
+
 let fmApp = angular.module('fmApp',
-  ['ngRoute']);
+  ['ngRoute', 'fmControllers', 'fmServices']);
 
 fmApp.config(
   ['$routeProvider', function($routeProvider) {
@@ -13,4 +15,6 @@ fmApp.config(
         templateUrl: './src/partials/home.html'
       })
   }]
-)
+);
+
+export default fmApp;

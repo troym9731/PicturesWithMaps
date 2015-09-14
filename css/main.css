@@ -362,6 +362,25 @@ th {
 /****************************************
   Fonts
 *****************************************/
+/****************************************
+  Defaults
+*****************************************/
+html {
+  box-sizing: border-box;
+  font: 12pt 'Open Sans', Arial;
+  color: #FFF; }
+
+*, *::before, *::after {
+  box-sizing: inherit;
+  color: inherit;
+  font: inherit; }
+
+h1 {
+  margin: 0; }
+
+/****************************************
+  Font-Awesome
+*****************************************/
 /*!
  *  Font Awesome 4.3.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
@@ -2160,25 +2179,6 @@ th {
   content: "\f23a"; }
 
 /****************************************
-  Defaults
-*****************************************/
-html {
-  box-sizing: border-box;
-  font: 12pt 'Open Sans', Arial;
-  color: #FFF; }
-
-*, *::before, *::after {
-  box-sizing: inherit;
-  color: inherit;
-  font: inherit; }
-
-h1 {
-  margin: 0; }
-
-/****************************************
-  Font-Awesome
-*****************************************/
-/****************************************
   Components and Helpers
 *****************************************/
 /** Buttons **/
@@ -2191,7 +2191,10 @@ button, a.btn {
     color: #444;
     transition: all 0.3s; }
 
-.banner-login.btn {
+a.btn {
+  text-decoration: none; }
+
+.banner-login {
   font-size: 16pt;
   display: inline-block;
   padding: 10px 25px;

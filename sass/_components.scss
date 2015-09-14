@@ -14,9 +14,10 @@ button {
 
 a.btn {
   @extend button;
+  text-decoration: none;
 }
 
-.banner-login.btn {
+.banner-login {
   font-size: 16pt;
   display: inline-block;
   padding: 10px 25px;
