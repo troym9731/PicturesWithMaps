@@ -44,11 +44,11 @@ gulp.task('serve', serve({
   Sass
 *****************************************/
 
-// gulp.task('sass', function() {
-//   return gulp.src('./sass/*.scss')
-//     .pipe(sass().on('error', sass.logError))
-//     .pipe(gulp.dest('./css'));
-// });
+gulp.task('sass', function() {
+  return gulp.src('./sass/*.scss')
+    .pipe(sass().on('error', sass.logError))
+    .pipe(gulp.dest('./css'));
+});
 
 /****************************************
   Watch
@@ -60,4 +60,4 @@ gulp.task('watch', ['build'], function () {
 })
 
 // Default
-gulp.task('default', ['watch', 'sass']);
+gulp.task('default', ['serve', 'watch', 'sass']);
