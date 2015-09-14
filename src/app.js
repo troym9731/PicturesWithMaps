@@ -14,6 +14,10 @@ fmApp.config(
       .when('/', {
         templateUrl: './src/partials/home.html'
       })
+      .when('/map', {
+        templateUrl: './src/partials/map.html',
+        controller: 'MapCtrl'
+      })
   }]
 );
 

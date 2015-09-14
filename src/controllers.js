@@ -4,16 +4,17 @@ import fmApp from './app';
 
 let fmControllers = angular.module('fmControllers', []);
 
-fmControllers.controller('LoginCtrl', ['$scope',
-  function($scope) {
+fmControllers.controller('LoginCtrl', ['$scope', '$location',
+  function($scope, $location) {
     $scope.login = function() {
-      OAuth.popup('flickr', { cache: true }).done(function(res) {
-        console.log(res);
-        res.me().done(function(me) {
-          console.log('Hello ' + me.name);
-        }).fail(function(err) {
-          console.log(err);
-        });
+      OAuth.initialize('4lBI76EZhVMz17EBWkTmYb0mg_4')
+      OAuth.popup('instagram').done(function(res) {
+          console.log(res);
+          res.me().done(function(me) {
+            console.log(me);
+            $location.path('/map');
+          });
+          // do some stuff with result
       }).fail(function(err) {
         console.log(err);
       });
