@@ -31,13 +31,13 @@ gulp.task('build', ['clean'], function () {
 
 
 /****************************************
-  Servers (Web and API)
+  Server
 *****************************************/
 
-gulp.task('serve', serve({
-  root: ['.'],
-  port: process.env.PORT || 8000
-}));
+// gulp.task('serve', serve({
+//   root: ['.'],
+//   port: process.env.PORT || 8000
+// }));
 
 
 /****************************************
