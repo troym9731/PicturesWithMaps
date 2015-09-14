@@ -13,6 +13,7 @@
     "tests"
   ],
   "dependencies": {
+    "angular-google-maps": "~2.2.1",
     "oauth-js": "~0.4.3"
   }
 }
