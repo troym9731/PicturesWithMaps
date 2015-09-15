@@ -1,6 +1,9 @@
 <header class="user-name"><h1>Hello, {{user.full_name}}</h1></header>
 <ui-gmap-google-map center='map.center' zoom='map.zoom'>
   <ui-gmap-window ng-repeat="picture in pictures" coords='picture.location' show='true'>
-    <a href="{{picture.link}}"><img class="windows" src="{{picture.images.standard_resolution.url}}" alt="Picture"></a>
+    <div>
+      <a href="{{picture.link}}"><img class="windows" src="{{picture.images.standard_resolution.url}}" alt="Picture"></a>
+      <h4 class="caption">{{picture.caption.text}}</h4>
+    </div>
   </ui-gmap-window>
 </ui-gmap-google-map>
