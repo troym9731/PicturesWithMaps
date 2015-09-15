@@ -4,6 +4,7 @@ button {
   background-color: transparent;
   border: 1px solid #FFF;
   border-radius: 4px;
+  outline: none;
 
   &:hover {
     background-color: #FFF;
@@ -28,4 +29,15 @@ a.btn {
 
 .angular-google-map-container { 
   min-height: 510px;
+}
+
+.user-name {
+  color: #000;
+  margin: 0 auto;
+  width: 270px;
+}
+
+.windows {
+  width: 100px;
+  height: 100px;
 }

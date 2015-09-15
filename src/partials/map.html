@@ -1,1 +1,6 @@
-<ui-gmap-google-map center='map.center' zoom='map.zoom'></ui-gmap-google-map>
+<h1 class="user-name">Hello, {{user.full_name}}</h1>
+<ui-gmap-google-map center='map.center' zoom='map.zoom'>
+  <ui-gmap-window ng-repeat="picture in pictures" coords='picture.location' show='true'>
+    <a href="{{picture.link}}"><img class="windows" src="{{picture.images.standard_resolution.url}}" alt="Picture"></a>
+  </ui-gmap-window>
+</ui-gmap-google-map>

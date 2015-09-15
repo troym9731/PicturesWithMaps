@@ -6,17 +6,17 @@ import angular_simple_logger from '../bower_components/angular-simple-logger/dis
 
 let fmControllers = angular.module('fmControllers', []);
 
-fmControllers.controller('LoginCtrl', ['$scope', '$location',
-  function($scope, $location) {
+fmControllers.controller('LoginCtrl', ['$scope', '$location', 'User',
+  function($scope, $location, User) {
     $scope.login = function() {
       OAuth.initialize('4lBI76EZhVMz17EBWkTmYb0mg_4')
       OAuth.popup('instagram').done(function(res) {
-          console.log(res);
-          console.log(res.user);
           $scope.$apply(function() {
             $location.path('/map');
           });
-
+          const userId = res.user.id;
+          const access_token = res.access_token;
+          User.set(res);
       }).fail(function(err) {
         console.log(err);
       });
@@ -24,10 +24,21 @@ fmControllers.controller('LoginCtrl', ['$scope', '$location',
   }
 ])
 
-fmControllers.controller('MapCtrl', ['$scope', 'uiGmapGoogleMapApi',
-  function($scope, uiGmapGoogleMapApi) {
-    uiGmapGoogleMapApi.then(function(maps) {
-      $scope.map = { center: { latitude: 45, longitude: -73 }, zoom: 8 };
+fmControllers.controller('MapCtrl', ['$scope', 'uiGmapGoogleMapApi', 'User',
+  function($scope, uiGmapGoogleMapApi, User) {
+    $scope.user = User.get().user;
+    User.getPhotos().done(function(res) {
+      uiGmapGoogleMapApi.then(function(maps) {
+        $scope.pictures = res.data;
+        $scope.map = {
+          center: {
+            latitude: 39.5, 
+            longitude: -98.35
+          }, 
+          zoom: 4
+        };
+        console.log($scope);
+      });
     });
   }
 ])
