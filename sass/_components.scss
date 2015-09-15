@@ -32,9 +32,13 @@ a.btn {
 }
 
 .user-name {
-  color: #000;
-  margin: 0 auto;
-  width: 270px;
+  text-align: center;
+
+  h1 {
+    color: #000;
+    margin: 0 auto;
+    width: 300px;
+  }
 }
 
 .windows {

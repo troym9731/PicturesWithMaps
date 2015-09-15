@@ -2206,9 +2206,11 @@ a.btn {
   min-height: 510px; }
 
 .user-name {
-  color: #000;
-  margin: 0 auto;
-  width: 270px; }
+  text-align: center; }
+  .user-name h1 {
+    color: #000;
+    margin: 0 auto;
+    width: 300px; }
 
 .windows {
   width: 100px;
