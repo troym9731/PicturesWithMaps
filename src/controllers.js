@@ -37,7 +37,6 @@ fmControllers.controller('MapCtrl', ['$scope', 'uiGmapGoogleMapApi', 'User',
           }, 
           zoom: 4
         };
-        console.log($scope);
       });
     });
   }
